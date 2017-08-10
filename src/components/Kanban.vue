@@ -1,21 +1,25 @@
 <template>
     <div class="drag-container">
-    	<ul class="drag-list">
-    		<li v-for="stage in stages" class="drag-column" :class="{['drag-column-' + stage]: true}">
-    			<span class="drag-column-header">
-    				<h2>{{ stage }}</h2>
-    			</span>
-    			<div class="drag-options"></div>
-    			<ul class="drag-inner-list" ref="list" :data-status="stage">
-                    <li class="drag-item" v-for="block in getBlocks(stage)" :data-block-id="block.id" :key="block.id">
-                        <slot :name="block.id">
-                            <strong>{{ block.status }}</strong>
-                            <div>{{ block.id }}</div>
-                        </slot>
-                    </li>
-    			</ul>
-    		</li>
-    	</ul>
+      <ul class="drag-list">
+        <li v-for="stage in stages" class="drag-column" :class="{['drag-column-' + stage]: true}">
+          <span class="drag-column-header">
+            <h2>{{ stage.title }}</h2>
+            <strong>{{ stage.value }}</strong>
+          </span>
+          <div class="drag-options"></div>
+          <ul class="drag-inner-list" ref="list" :data-status="stage.title">
+            <li class="drag-item" v-for="block in getBlocks(stage.title)" :data-block-id="block.id" :key="block.id">
+                <slot :name="block.id">
+                    <strong>{{ block.status }}</strong>
+                    <div>{{ block.id }}</div>
+                </slot>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="drag-list__bottom">
+        <strong>{{ stage.value }}</strong>
+      </div>
     </div>
 </template>
 
