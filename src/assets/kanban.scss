@@ -15,6 +15,19 @@ ul.drag-list, ul.drag-inner-list {
     display: flex;
     align-items: flex-start;
 
+    .drag-list__bottom {
+      height: 40px;
+      background: #ecedf0;
+      padding: 15px 20px;
+      border-right: 1px #dfe0e4 solid;
+      left: 1px;
+
+      strong {
+        font-size: 14px;
+        color: #2d3237;
+      }
+    }
+
     @media (max-width: 690px) {
         display: block;
     }
