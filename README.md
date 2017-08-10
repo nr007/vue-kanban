@@ -2,19 +2,6 @@
 
 > A drag and drop kanban board component
 
-### [Demo](https://brockreece.github.io/vue-kanban/)
-
-### Installation
-
-Add vue-kanban to your project with npm
-``` bash
-npm install vue-kanban 
-```
-
-... or yarn
-```bash
-yarn add vue-kanban
-```
 
 ### Basic Usage
 
@@ -35,13 +22,30 @@ and then use the component in your project.
 - blocks: an array of objects that will make up the blocks on the kanban board
 ```js
 {
-  stages: ['on-hold', 'in-progress', 'needs-review', 'approved'],
+  stages: [
+    {
+      title: 'kvalificirane priložnosti',
+      value: '1.915.800,00 €'
+    }, {
+      title: 'poslana ponudba',
+      value: '1.915.800,00 €'
+    }, {
+      title: 'v pogajanjih',
+      value: '1.915.800,00 €'
+    }, {
+      title: 'uspešno',
+      value: '1.915.800,00 €'
+    }, {
+      title: 'neuspešno',
+      value: '1.915.800,00 €'
+    }
+  ],
   blocks: [
     {
       id: 1,
       status: 'on-hold',
       title: 'Test',
-    },
+    }
   ],
 }
 ```
